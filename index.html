@@ -30,6 +30,11 @@
     <p class="muted">Vui lòng trả lời các câu hỏi. Dữ liệu được lưu <b>cục bộ</b> trong trình duyệt và có thể xuất CSV.</p>
 
     <form id="form">
+      <div class="q" id="emailblk">
+        <div class="qlabel">0/ Điền email của bạn</div>
+        <input type="email" id="email" name="email" placeholder="vidu@abc.edu.vn" required>
+        <div class="error" id="emailerr"></div>
+      </div>
       <!-- Q1 -->
       <div class="q" id="q1blk">
         <div class="qlabel">1/ Số thành viên trung bình tham gia vào bài tập lớn ở các môn?</div>
@@ -282,4 +287,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
     show($("datawrap"), $("datawrap").classList.contains("hidden"));
   };
   $("toggleDataBtn").addEventListener("click", toggleData);
-  $("toggleDataBtn2").addEventListener("click", toggleD
+  $("toggleDataBtn2").addEventListener("click", toggleData);
+
+  const dl = ()=>downloadCSV(loadRows());
+  $("downloadBtn").addEventListener("click", dl);
+  $("downloadBtn2").addEventListener("click", dl);
+});
+</script>
+</body>
+</html>
